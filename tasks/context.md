@@ -15,7 +15,8 @@ Le site doit refléter un profil analytique et business, pas un profil purement 
 - Tailwind CSS v4 avec plugin `@tailwindcss/vite` (pas de tailwind.config.js)
 - Framer Motion (animations)
 - React Router v6 (routing)
-- Déploiement prévu : Vercel (site statique)
+- Déploiement : Vercel (site statique) — **Live : https://portfolio-sadam.vercel.app**
+- GitHub : https://github.com/sadam269/portfolio-sadam
 
 ## Architecture du projet
 ```
