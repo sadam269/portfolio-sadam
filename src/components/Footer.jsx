@@ -2,43 +2,48 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#0f172a', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-      <div style={{ maxWidth: '1152px', margin: '0 auto', padding: '40px 24px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
-          <p style={{ fontSize: '1rem', fontWeight: 600, color: '#ffffff', letterSpacing: '-0.01em' }}>
-            Sadam <span style={{ color: '#818cf8' }}>Soufiani</span>
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link to="/about" style={{ fontSize: '0.875rem', color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => e.target.style.color = '#94a3b8'}
-              onMouseLeave={e => e.target.style.color = '#64748b'}>
-              À propos
-            </Link>
-            <Link to="/projects" style={{ fontSize: '0.875rem', color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => e.target.style.color = '#94a3b8'}
-              onMouseLeave={e => e.target.style.color = '#64748b'}>
-              Projets
-            </Link>
-            <Link to="/contact" style={{ fontSize: '0.875rem', color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => e.target.style.color = '#94a3b8'}
-              onMouseLeave={e => e.target.style.color = '#64748b'}>
-              Contact
-            </Link>
-            <a href="https://www.linkedin.com/in/sadam-soufiani-3bb32a320" target="_blank" rel="noopener noreferrer"
-              style={{ fontSize: '0.875rem', color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => e.target.style.color = '#818cf8'}
-              onMouseLeave={e => e.target.style.color = '#64748b'}>
-              LinkedIn
-            </a>
-            <a href="https://github.com/sadam269" target="_blank" rel="noopener noreferrer"
-              style={{ fontSize: '0.875rem', color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => e.target.style.color = '#818cf8'}
-              onMouseLeave={e => e.target.style.color = '#64748b'}>
-              GitHub
-            </a>
-          </div>
-          <p style={{ fontSize: '0.8rem', color: '#334155', marginTop: '8px' }}>
-            © {new Date().getFullYear()} Sadam Soufiani — Data Scientist · Ingénieur Big Data
+    <footer style={{ backgroundColor: 'var(--bg-muted)', borderTop: '1px solid var(--border)' }}>
+      <div style={{ maxWidth: '72rem', margin: '0 auto', padding: '48px 24px' }}>
+
+        {/* Rule + label */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px' }}>
+          <span style={{ flex: 1, height: '1px', backgroundColor: 'var(--border)' }} />
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--accent)' }}>
+            Sadam Soufiani
+          </span>
+          <span style={{ flex: 1, height: '1px', backgroundColor: 'var(--border)' }} />
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '28px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            {[
+              { to: '/about', label: 'À propos', internal: true },
+              { to: '/projects', label: 'Projets', internal: true },
+              { to: '/contact', label: 'Contact', internal: true },
+              { to: 'https://www.linkedin.com/in/sadam-soufiani-3bb32a320', label: 'LinkedIn', internal: false },
+              { to: 'https://github.com/sadam269', label: 'GitHub', internal: false },
+            ].map(({ to, label, internal }) =>
+              internal ? (
+                <Link key={label} to={to} style={{
+                  fontFamily: 'var(--font-sans)', fontSize: '0.82rem', color: 'var(--fg-muted)',
+                  textDecoration: 'none', letterSpacing: '0.03em', transition: 'color 0.2s',
+                }}
+                  onMouseEnter={e => e.target.style.color = 'var(--accent)'}
+                  onMouseLeave={e => e.target.style.color = 'var(--fg-muted)'}
+                >{label}</Link>
+              ) : (
+                <a key={label} href={to} target="_blank" rel="noopener noreferrer" style={{
+                  fontFamily: 'var(--font-sans)', fontSize: '0.82rem', color: 'var(--fg-muted)',
+                  textDecoration: 'none', letterSpacing: '0.03em', transition: 'color 0.2s',
+                }}
+                  onMouseEnter={e => e.target.style.color = 'var(--accent)'}
+                  onMouseLeave={e => e.target.style.color = 'var(--fg-muted)'}
+                >{label}</a>
+              )
+            )}
+          </nav>
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--fg-muted)', letterSpacing: '0.08em', opacity: 0.6 }}>
+            © {new Date().getFullYear()} — Data Scientist · Ingénieur Big Data
           </p>
         </div>
       </div>
