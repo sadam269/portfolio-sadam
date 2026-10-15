@@ -17,19 +17,19 @@
 [x] Fix Home — styles inline pour fiabilité rendu (2026-04-27)
 
 ## En attente (assets Sadam)
-[ ] Remplacer placeholders projets par projets réels
-[ ] Remplir parcours formation (école, dates précises)
-[ ] Ajouter photo de profil (section hero ou À propos)
-[ ] Ajouter bio personnelle réelle
-[ ] Ajouter URL LinkedIn dans Contact
-[ ] Mettre à jour liste compétences réelles
+[x] Remplacer placeholders projets par projets réels (fait — 2026-10-15)
+[x] Remplir parcours formation (école, dates précises) (fait — 2026-10-15)
+[x] Ajouter photo de profil (section hero ou À propos) (fait — 2026-10-15)
+[x] Ajouter bio personnelle réelle (fait — 2026-10-15)
+[x] Ajouter URL LinkedIn dans Contact (fait — 2026-10-15)
+[x] Mettre à jour liste compétences réelles (fait — 2026-10-15)
 
 ## À faire ensuite
-[ ] Vérification responsive mobile complète
-[ ] Validation visuelle toutes les pages
-[ ] Configuration déploiement Vercel
+[~] Vérification responsive mobile complète — test téléphone par Sadam
+[~] Validation visuelle toutes les pages — test téléphone par Sadam
+[x] Configuration déploiement Vercel (fait — 2026-10-15)
 [ ] Ajout favicon personnalisé (si logo fourni)
-[ ] SEO — meta description, og:tags dans index.html
+[x] SEO — meta description, og:tags dans index.html (fait — 2026-10-15)
 
 ## Mise à jour CV — 2026-10-15
 AVANT : contenu basé sur ancien CV (projets événements/ACEM, tél. Maroc, Bahati « co-fondateur », lien soinatech.com cassé)
