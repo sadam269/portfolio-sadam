@@ -48,7 +48,7 @@ APRÈS : contenu aligné sur CV oct. 2026 + soinaa-tech.com
 [x] README — remplacé (était le template Vite) (2026-10-15)
 [x] Page 404 — NotFound.jsx + route * (2026-10-15)
 [x] Retrait mention LADHA/PharmaStock (décision Sadam : ni LADHA ni Halibou sur le site) (2026-10-15)
-[ ] Bouton « Télécharger mon CV » — en attente du PDF
+[~] Bouton « Télécharger mon CV » — hero accueil + ligne CV dans Contact
 [x] Langues — Arabe (lecture), Anglais (notions — lecture) (2026-10-15)
 [x] SCHOOLIA / Mirontsy — dépôts privés : lien profil retiré, mention « Code privé · démo sur demande » (2026-10-15)
 [ ] Version anglaise — plus tard

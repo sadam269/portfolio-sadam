@@ -11,6 +11,7 @@ const contacts = [
   { href: 'tel:+2694601550', label: 'Téléphone', value: '+269 460 1550', external: false },
   { href: 'https://www.linkedin.com/in/sadam-soufiani-3bb32a320', label: 'LinkedIn', value: 'Sadam Soufiani', external: true },
   { href: 'https://github.com/sadam269', label: 'GitHub', value: 'sadam269', external: true },
+  { href: '/CV_Sadam_Soufiani.pdf', label: 'CV', value: '↓ Télécharger (PDF)', external: false, download: true },
   { href: null, label: 'Localisation', value: 'Anjouan, Comores', external: false },
 ]
 
@@ -75,7 +76,7 @@ export default function Contact() {
             <div>
               {contacts.map((c, i) => {
                 const Tag = c.href ? 'a' : 'div'
-                const linkProps = c.href ? { href: c.href, ...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}) } : {}
+                const linkProps = c.href ? { href: c.href, ...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}), ...(c.download ? { download: true } : {}) } : {}
                 return (
                   <motion.div key={c.label} variants={fadeUp} custom={i + 1}>
                     <Tag {...linkProps} style={{

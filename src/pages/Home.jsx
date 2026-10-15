@@ -166,6 +166,16 @@ export default function Home() {
             >
               Me contacter
             </Link>
+            <a href="/CV_Sadam_Soufiani.pdf" download className="hero-cta-btn" style={{
+              fontFamily: 'var(--font-sans)', fontSize: '0.8rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase',
+              padding: '12px 32px', borderRadius: '4px', backgroundColor: 'transparent', color: 'var(--fg)',
+              textDecoration: 'none', border: '1px solid var(--border)', transition: 'border-color 0.2s, color 0.2s',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--fg)' }}
+            >
+              ↓ Télécharger mon CV
+            </a>
           </motion.div>
         </motion.div>
       </section>
