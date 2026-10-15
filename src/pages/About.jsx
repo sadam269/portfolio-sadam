@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import profilePhoto from '../assets/image copy.png'
+import profilePhoto from '../assets/profile.webp'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -16,17 +16,61 @@ const SectionLabel = ({ children }) => (
 )
 
 const skills = [
-  { category: 'Data Science & IA', color: '#B8860B', items: ['Python', 'Machine Learning', 'Deep Learning', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'SQL', 'Visualisation de données'] },
-  { category: 'Développement Web', color: '#6B7A8D', items: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'React', 'PHP', 'Django'] },
-  { category: 'Big Data & Ingénierie', color: '#5C7A5C', items: ['Big Data', 'Traitement de données', 'Pipeline de données', 'Modélisation'] },
-  { category: 'Méthodes & Outils', color: '#8D6B5C', items: ['Environnement agile', 'Gestion de projet', 'KPIs & reporting', 'Travail en équipe'] },
+  { category: 'Langages', color: '#B8860B', items: ['Python', 'SQL', 'JavaScript', 'PHP'] },
+  { category: 'Développement web', color: '#6B7A8D', items: ['Flask', 'API REST', 'HTMX', 'Alpine.js', 'Bootstrap 5', 'React', 'Next.js', 'MedusaJS', 'Flutter', 'Firebase'] },
+  { category: 'Bases de données', color: '#5C7A5C', items: ['PostgreSQL', 'MySQL', 'Modélisation', "Contrôle d'accès"] },
+  { category: 'Data Science & IA', color: '#8D6B5C', items: ['Pandas', 'Scikit-learn', 'XGBoost', 'Keras', 'TensorFlow', 'PyTorch', 'YOLO', 'U-Net', 'CNN'] },
+  { category: 'Outils & déploiement', color: '#7A6B8D', items: ['Docker / Compose', 'Nginx', 'VPS Linux', 'Git / GitHub', 'n8n', 'Stripe Connect', 'Vercel'] },
+  { category: 'Infrastructure (en cours)', color: '#8D8A6B', items: ['VMware ESXi 8', 'Workstation', 'Gestion de VM'] },
+]
+
+const experiences = [
+  { annee: '2024 – Présent', titre: 'Co-fondateur, DSI & Développeur Full Stack', lieu: 'SOINAA-TECH — Startup digitale, Comores & Maroc', desc: "Sites web, applications mobiles et systèmes automatisés pour PME et institutions aux Comores et au Maroc : analyse des besoins, modélisation des données, développement et déploiement." },
+  { annee: 'Juin 2026', titre: 'Enquêteur terrain — Diagnostic Participatif SAT', lieu: 'Projet Ulanga Mali (AFD / Union Européenne)', desc: "Sélectionné parmi 15 candidats formés : réunions publiques dans 12 localités sur 4 préfectures et collecte de données socio-territoriales (environnement, agriculture, risques, gouvernance) pour un projet de 20 M€." },
+  { annee: '06/2024 – 09/2024', titre: 'Ingénieur Intelligence Artificielle (Stage)', lieu: 'CFHT SARL', desc: "Développement et entraînement de modèles Deep Learning (CNN, YOLO, U-Net) pour des projets clients ; intégration dans des applications existantes en méthode Agile/Scrum." },
 ]
 
 const parcours = [
-  { annee: '2023 – 2025', titre: 'Master Big Data & Digital Business', lieu: "Sup'Management — Fès", desc: "Formation orientée data science, intelligence artificielle appliquée au business, stratégie digitale et traitement de données massives." },
-  { annee: '2021 – 2022', titre: 'Licence Sciences Mathématiques et Informatique', lieu: 'Faculté des Sciences Ibn Zohr — Agadir', desc: "Formation scientifique axée sur les mathématiques, l'algorithmique et les fondements de l'informatique." },
-  { annee: '2015 – 2016', titre: 'Baccalauréat Scientifique', lieu: 'Lycée Mixte de Mutsamudu', desc: '' },
+  { annee: '2026 — en cours', titre: 'Formation continue — Infrastructure', lieu: 'Virtualisation, admin. système, réseau, Cloud, DevOps', desc: '' },
+  { annee: '2023 – 2025', titre: 'Master Spécialisé Big Data & Digital Business — Mention Bien', lieu: "Sup'Management Fès (reconnu par l'État)", desc: "Formation orientée data science, intelligence artificielle appliquée au business, stratégie digitale et traitement de données massives." },
+  { annee: '2021 – 2022', titre: 'Licence Mathématiques et Informatique', lieu: 'Faculté des Sciences Ibn Zohr — Agadir', desc: '' },
 ]
+
+const langues = [
+  { langue: 'Comorien', niveau: 'Langue maternelle' },
+  { langue: 'Français', niveau: 'Courant' },
+  { langue: 'Arabe', niveau: 'Lecture' },
+  { langue: 'Anglais', niveau: 'Notions — lecture' },
+]
+
+const Timeline = ({ items }) => (
+  <div>
+    {items.map((item, i) => (
+      <motion.div key={i}
+        initial="hidden" whileInView="visible" viewport={{ once: true }}
+        variants={fadeUp} custom={i}
+        style={{ display: 'flex', gap: '20px', paddingBottom: i < items.length - 1 ? '32px' : '0' }}
+      >
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '16px', flexShrink: 0 }}>
+          <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: 'var(--accent)', border: '2px solid var(--bg)', boxShadow: '0 0 0 2px var(--accent)', marginTop: '5px', flexShrink: 0 }} />
+          {i < items.length - 1 && <div style={{ width: '1px', flex: 1, backgroundColor: 'var(--border)', marginTop: '8px' }} />}
+        </div>
+        <div style={{ flex: 1, paddingBottom: i < items.length - 1 ? '8px' : '0' }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)', display: 'block', marginBottom: '6px' }}>
+            {item.annee}
+          </span>
+          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1rem', fontWeight: 600, color: 'var(--fg)', marginBottom: '4px', lineHeight: 1.4 }}>
+            {item.titre}
+          </h3>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.82rem', color: 'var(--fg-muted)', fontStyle: 'italic', marginBottom: item.desc ? '8px' : '0' }}>
+            {item.lieu}
+          </p>
+          {item.desc && <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'var(--fg-muted)', lineHeight: 1.7 }}>{item.desc}</p>}
+        </div>
+      </motion.div>
+    ))}
+  </div>
+)
 
 export default function About() {
   return (
@@ -58,7 +102,7 @@ export default function About() {
               Mon parcours
             </motion.h1>
             <motion.p variants={fadeUp} custom={2} style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--fg-muted)', lineHeight: 1.8, maxWidth: '520px' }}>
-              Ingénieur Big Data spécialisé en Data Science et développement web. Curieux et motivé par les défis techniques, à l'aise en équipe et en environnement agile — compétences solides en modélisation et traitement de données.
+              Ingénieur Big Data & Data Scientist (Master spécialisé, mention Bien) avec une double compétence en machine learning et en développement web Full Stack. Co-développeur de Bahati, marketplace comorienne en production, et co-fondateur de SOINAA-TECH, startup de digitalisation aux Comores et au Maroc. En formation continue sur la virtualisation et l'administration système. Autonome, rigoureux et orienté résultats.
             </motion.p>
           </div>
         </motion.div>
@@ -69,37 +113,28 @@ export default function About() {
         <div style={{ height: '1px', backgroundColor: 'var(--border)' }} />
       </div>
 
+      {/* Expérience */}
+      <section style={{ maxWidth: '72rem', margin: '0 auto', padding: '72px 24px 0' }}>
+        <SectionLabel>Expérience professionnelle</SectionLabel>
+        <Timeline items={experiences} />
+      </section>
+
       {/* Formation + Skills */}
       <section style={{ maxWidth: '72rem', margin: '0 auto', padding: '72px 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '72px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))', gap: '72px' }}>
 
-          {/* Formation */}
+          {/* Formation + Langues */}
           <div>
-            <SectionLabel>Formation académique</SectionLabel>
-            <div>
-              {parcours.map((item, i) => (
-                <motion.div key={i}
-                  initial="hidden" whileInView="visible" viewport={{ once: true }}
-                  variants={fadeUp} custom={i}
-                  style={{ display: 'flex', gap: '20px', paddingBottom: i < parcours.length - 1 ? '32px' : '0', marginBottom: i < parcours.length - 1 ? '0' : '0' }}
-                >
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '16px', flexShrink: 0 }}>
-                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: 'var(--accent)', border: '2px solid var(--bg)', boxShadow: '0 0 0 2px var(--accent)', marginTop: '5px', flexShrink: 0 }} />
-                    {i < parcours.length - 1 && <div style={{ width: '1px', flex: 1, backgroundColor: 'var(--border)', marginTop: '8px' }} />}
-                  </div>
-                  <div style={{ flex: 1, paddingBottom: i < parcours.length - 1 ? '8px' : '0' }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)', display: 'block', marginBottom: '6px' }}>
-                      {item.annee}
-                    </span>
-                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1rem', fontWeight: 600, color: 'var(--fg)', marginBottom: '4px', lineHeight: 1.4 }}>
-                      {item.titre}
-                    </h3>
-                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.82rem', color: 'var(--fg-muted)', fontStyle: 'italic', marginBottom: item.desc ? '8px' : '0' }}>
-                      {item.lieu}
-                    </p>
-                    {item.desc && <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.875rem', color: 'var(--fg-muted)', lineHeight: 1.7 }}>{item.desc}</p>}
-                  </div>
-                </motion.div>
+            <SectionLabel>Formation</SectionLabel>
+            <Timeline items={parcours} />
+
+            <div style={{ marginTop: '56px' }}>
+              <SectionLabel>Langues</SectionLabel>
+              {langues.map(l => (
+                <div key={l.langue} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '12px 0', borderBottom: '1px solid var(--border)' }}>
+                  <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1rem', fontWeight: 600, color: 'var(--fg)' }}>{l.langue}</span>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.85rem', color: 'var(--fg-muted)' }}>{l.niveau}</span>
+                </div>
               ))}
             </div>
           </div>

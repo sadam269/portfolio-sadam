@@ -4,11 +4,13 @@
 - Nom : Sadam Soufiani
 - Formation : Master Big Data & E-Business
 - Email : soufianisadam01@gmail.com
-- Téléphone : 0638405286
+- Téléphone : +269 460 1550 (ancien : 0638405286)
 
 ## Profil
-Pas un développeur — profil orienté data, business digital, stratégie e-commerce et analyse de données.
-Le site doit refléter un profil analytique et business, pas un profil purement technique.
+(Mis à jour 2026-10-15 depuis CV oct. 2026)
+Data Scientist & Ingénieur IA · Développeur Python Full Stack. Double compétence ML + web Full Stack.
+Co-fondateur & DSI de SOINAA-TECH (soinaa-tech.com), co-développeur de Bahati Marketplace (en production).
+Téléphone CV : +269 460 1550 — Anjouan, Comores. Source de vérité contenu : le CV le plus récent.
 
 ## Stack
 - React + Vite (créé via `npm create vite@latest --template react`)

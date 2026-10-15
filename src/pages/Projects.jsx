@@ -16,8 +16,8 @@ const SectionLabel = ({ children }) => (
   </div>
 )
 
-function LinkButtons({ liveUrl, githubUrl }) {
-  if (!liveUrl && !githubUrl) return null
+function LinkButtons({ liveUrl, githubUrl, privateRepo }) {
+  if (!liveUrl && !githubUrl && !privateRepo) return null
   return (
     <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginTop: '20px' }}>
       {liveUrl && (
@@ -45,6 +45,14 @@ function LinkButtons({ liveUrl, githubUrl }) {
           GH Code source
         </a>
       )}
+      {privateRepo && !githubUrl && (
+        <span style={{
+          fontFamily: 'var(--font-mono)', fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase',
+          padding: '7px 16px', borderRadius: '3px', color: 'var(--fg-muted)', border: '1px dashed var(--border)',
+        }}>
+          Code privé · démo sur demande
+        </span>
+      )}
     </div>
   )
 }
@@ -66,10 +74,10 @@ export default function Projects() {
             </span>
           </motion.div>
           <motion.h1 variants={fadeUp} custom={1} style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 400, color: 'var(--fg)', marginBottom: '16px' }}>
-            Projets & expériences
+            Projets
           </motion.h1>
           <motion.p variants={fadeUp} custom={2} style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--fg-muted)', maxWidth: '520px', lineHeight: 1.8 }}>
-            Travaux académiques, stage en IA et développement web — projets concrets orientés résultats.
+            Plateformes en production, applications métiers et machine learning — des projets concrets, du besoin au déploiement.
           </motion.p>
         </motion.div>
       </section>
@@ -116,7 +124,7 @@ export default function Projects() {
                       }}>{skill}</span>
                     ))}
                   </div>
-                  <LinkButtons liveUrl={featured.liveUrl} githubUrl={featured.githubUrl} />
+                  <LinkButtons liveUrl={featured.liveUrl} githubUrl={featured.githubUrl} privateRepo={featured.privateRepo} />
                 </div>
               </div>
               {/* Right */}
@@ -133,7 +141,7 @@ export default function Projects() {
         )}
 
         {/* Other cards */}
-        <SectionLabel>Autres expériences</SectionLabel>
+        <SectionLabel>Autres projets</SectionLabel>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', border: '1px solid var(--border)', borderRadius: '6px', overflow: 'hidden', backgroundColor: 'var(--border)' }}>
           {rest.map((project, i) => (
             <motion.div key={i}
@@ -164,7 +172,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <LinkButtons liveUrl={project.liveUrl} githubUrl={project.githubUrl} />
+              <LinkButtons liveUrl={project.liveUrl} githubUrl={project.githubUrl} privateRepo={project.privateRepo} />
             </motion.div>
           ))}
         </div>

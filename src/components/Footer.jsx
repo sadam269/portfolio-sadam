@@ -43,7 +43,7 @@ export default function Footer() {
             )}
           </nav>
           <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--fg-muted)', letterSpacing: '0.08em', opacity: 0.6 }}>
-            © {new Date().getFullYear()} — Data Scientist · Ingénieur Big Data
+            © {new Date().getFullYear()} — Data Scientist & Ingénieur IA · Développeur Full Stack
           </p>
         </div>
       </div>

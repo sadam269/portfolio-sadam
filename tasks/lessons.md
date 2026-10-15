@@ -9,3 +9,5 @@ Format : [YYYY-MM-DD] | CE QUI A MAL TOURNÉ | RÈGLE POUR L'ÉVITER
 [2026-04-27] | Navbar transparent au départ = contenu page visuellement superposé avec la nav | Toujours donner un fond blanc à la navbar dès le départ, ne pas partir sur transparent même si "effet scroll" prévu
 
 [2026-04-27] | bg-white + border-slate-100 sur fond blanc = cartes invisibles | Pour les cartes sur fond blanc, utiliser border-slate-200 minimum + box-shadow visible, ou changer le fond section en slate-50
+
+[2026-10-15] | Mise à jour du contenu depuis le CV : une phrase obsolète (« stages, alternances ») est restée dans Contact | Après une mise à jour de contenu, faire un grep de tous les termes obsolètes (statut, ville, téléphone, titre) sur toutes les pages, pas seulement les blocs de données

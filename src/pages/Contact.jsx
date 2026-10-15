@@ -8,10 +8,10 @@ const fadeUp = {
 
 const contacts = [
   { href: 'mailto:soufianisadam01@gmail.com', label: 'Email', value: 'soufianisadam01@gmail.com', external: false },
-  { href: 'tel:+212638405286', label: 'Téléphone', value: '+212 638 405 286', external: false },
+  { href: 'tel:+2694601550', label: 'Téléphone', value: '+269 460 1550', external: false },
   { href: 'https://www.linkedin.com/in/sadam-soufiani-3bb32a320', label: 'LinkedIn', value: 'Sadam Soufiani', external: true },
   { href: 'https://github.com/sadam269', label: 'GitHub', value: 'sadam269', external: true },
-  { href: null, label: 'Localisation', value: 'Kenitra, Maroc', external: false },
+  { href: null, label: 'Localisation', value: 'Anjouan, Comores', external: false },
 ]
 
 const inputStyle = {
@@ -50,7 +50,7 @@ export default function Contact() {
             Parlons de votre projet
           </motion.h1>
           <motion.p variants={fadeUp} custom={2} style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--fg-muted)', maxWidth: '480px', lineHeight: 1.8 }}>
-            Disponible pour des opportunités professionnelles, stages, alternances ou collaborations.
+            Disponible pour des postes, missions de consulting et collaborations.
           </motion.p>
         </motion.div>
       </section>

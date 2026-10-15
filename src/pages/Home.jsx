@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import profilePhoto from '../assets/image copy.png'
-import logoSoinaa from '../assets/image.png'
-import logoBahati from '../assets/image copy 2.png'
+import profilePhoto from '../assets/profile.webp'
+import logoSoinaa from '../assets/logo-soinaa.webp'
+import logoBahati from '../assets/logo-bahati.webp'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -24,24 +24,24 @@ const ventures = [
     name: 'Soinaa-tech',
     initials: 'ST',
     logo: logoSoinaa,
-    role: 'Co-fondateur',
-    url: 'https://soinatech.com',
-    desc: "Studio digital spécialisé dans la transformation numérique des entreprises, écoles et entrepreneurs aux Comores et au Maroc. Création web, développement d'applications métiers et intégration de solutions IA scalables.",
+    role: 'Co-fondateur · DSI',
+    url: 'https://soinaa-tech.com',
+    desc: "Startup de digitalisation aux Comores et au Maroc : sites web, applications métiers et systèmes automatisés pour entreprises, écoles et entrepreneurs.",
   },
   {
     name: 'Bahati Marketplace',
     initials: 'BH',
     logo: logoBahati,
-    role: 'Co-fondateur',
+    role: 'Co-développeur · en production',
     url: 'https://bahati-marketplace.tech',
-    desc: 'Première marketplace 100% comorienne. Les vendeurs créent leur boutique en quelques minutes, les acheteurs trouvent vêtements, artisanat, électronique et services — tout en ligne, entre Comoriens. Inscription gratuite.',
+    desc: 'Première marketplace multi-vendeurs des Comores : ≈ 200 produits, plus de 40 boutiques. Acheteurs, vendeurs, fournisseurs et livreurs sur un compte unique, paiement, chat et choix du livreur.',
   },
 ]
 
 const highlights = [
-  { label: 'Data Science & IA', desc: "Machine Learning, Deep Learning, Python — modèles prédictifs et détection d'anomalies en conditions réelles." },
-  { label: 'Big Data & Ingénierie', desc: 'Traitement de données à grande échelle, pipelines robustes et modélisation orientée performance.' },
-  { label: 'Digital Business', desc: 'Stratégie e-commerce, KPIs, intelligence économique — transformer les données en décisions concrètes.' },
+  { label: 'Data Science & IA', desc: 'Machine Learning et Deep Learning (XGBoost, CNN, YOLO, U-Net) — détection de fraude avec 30 % de faux positifs en moins.' },
+  { label: 'Développement Full Stack', desc: 'Flask, Next.js, MedusaJS, PostgreSQL — de la modélisation des données à la plateforme en production.' },
+  { label: 'Déploiement & Infrastructure', desc: 'Docker Compose, Nginx, VPS Linux, n8n — et virtualisation VMware ESXi en formation continue.' },
 ]
 
 export default function Home() {
@@ -130,14 +130,14 @@ export default function Home() {
           <motion.p variants={fadeUp} custom={3}
             style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--accent)', fontWeight: 500, letterSpacing: '0.03em', marginBottom: '28px', paddingBottom: '28px', borderBottom: '1px solid var(--border)', maxWidth: '520px', margin: '0 auto 28px' }}
           >
-            Data Scientist · Ingénieur Big Data & Digital Business
+            Data Scientist & Ingénieur IA · Développeur Python Full Stack
           </motion.p>
 
           {/* Description */}
           <motion.p variants={fadeUp} custom={4}
             style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--fg-muted)', lineHeight: 1.85, marginBottom: '40px', maxWidth: '520px', margin: '0 auto 40px' }}
           >
-            Ingénieur Big Data spécialisé en Data Science et développement web. Je conçois des modèles de machine learning, traite des données à grande échelle et développe des applications orientées résultats.
+            Ingénieur Big Data avec une double compétence en machine learning et en développement web Full Stack. Co-fondateur de SOINAA-TECH et co-développeur de Bahati, marketplace comorienne en production.
           </motion.p>
 
           {/* CTAs */}
@@ -210,7 +210,7 @@ export default function Home() {
       {/* Ventures */}
       <section className="section-pad" style={{ backgroundColor: 'var(--bg-muted)', padding: '80px 24px' }}>
         <div style={{ maxWidth: '72rem', margin: '0 auto' }}>
-          <SectionLabel>Ventures & co-fondateur</SectionLabel>
+          <SectionLabel>Entreprises & produits</SectionLabel>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             className="ventures-grid"
